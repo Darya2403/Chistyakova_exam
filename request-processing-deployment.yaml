@@ -16,6 +16,7 @@ spec:
       containers:
       - name: request-processing
         image: request-processing:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 ---

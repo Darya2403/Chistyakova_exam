@@ -16,6 +16,7 @@ spec:
       containers:
       - name: security
         image: security:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5002
 ---
