@@ -16,7 +16,7 @@ spec:
       containers:
       - name: scoring
         image: scoring:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001
 ---

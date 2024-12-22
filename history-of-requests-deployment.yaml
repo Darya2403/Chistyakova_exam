@@ -16,7 +16,7 @@ spec:
       containers:
       - name: history-of-requests
         image: history-of-requests:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5003
 ---

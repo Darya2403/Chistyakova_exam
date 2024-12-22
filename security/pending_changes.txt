@@ -1,3 +1,2 @@
-{'fio': 'сотрудник', 'hash_sum': '2de60b28ea30e75bbbd193681ecafa7b15581b9bf0959d5b774200c3c270a308', 'request_id': 'e435f7cb-576e-43bf-853d-2799c6eebd41', 'date': '2024-12-22 19:43:41', 'checked_by': '111', 'check_date': '2024-12-22 20:17:25', 'approve': 1}
 {'fio': 'test2', 'hash_sum': '35b6d10170eb31812bce99f60710d888d9848316c0c26ec0a31253c19fd1b99a', 'request_id': '215888da-431c-4a1b-a97c-acb791b9ef77', 'date': '2024-12-22 19:44:50', 'checked_by': '222', 'check_date': '2024-12-22 20:17:38', 'approve': 0}
 {'fio': 'darya', 'hash_sum': '2de60b28ea30e75bbbd193681ecafa7b15581b9bf0959d5b774200c3c270a308', 'request_id': 'ae599faa-2066-44da-93ba-9caf1b52c560', 'date': '2024-12-22 21:35:09', 'checked_by': 'darya', 'check_date': '2024-12-22 21:35:44', 'approve': 1}

@@ -1,6 +1,6 @@
 version: '3'
 services:
-  request_processing:
+  request-processing:
     build: ./request-processing
     ports:
       - "5000:5000"
@@ -12,7 +12,7 @@ services:
     build: ./security
     ports:
       - "5002:5002"
-  history_of_requests:
+  history-of-requests:
     build: ./history-of-requests
     ports:
       - "5003:5003"

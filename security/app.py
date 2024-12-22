@@ -1,3 +1,9 @@
+#Пример curl для вызова смены модели
+#curl -X POST http://localhost:5002/change_model \
+     #-H "Content-Type: application/json" \
+     #-d '{"fio": "John Doe", "hash_sum": "abc123"}'
+
+
 from flask import Flask, request, jsonify, render_template
 import hashlib
 from datetime import datetime
@@ -10,7 +16,7 @@ import ast
 app = Flask(__name__)
 
 # Функция для чтения данных из файла
-def read_file(file_path):
+def read_file(file_path, encoding='utf-8'):
     with open(file_path, 'r') as f:
         return [ast.literal_eval(line.strip()) for line in f.readlines()]
 
@@ -20,10 +26,10 @@ def write_file(file_path, data):
         f.write(str(data) + '\n')
 
 # Функция для обновления строки в файле
-def update_line_in_file(file_path, request_id, new_data):
+def update_line_in_file(file_path, request_id, new_data, encoding='utf-8'):
     with open(file_path, 'r') as f:
         lines = f.readlines()
-    with tempfile.NamedTemporaryFile(delete=False, mode='w') as temp_file:
+    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding=encoding) as temp_file:
         for line in lines:
             change = ast.literal_eval(line.strip())
             if change['request_id'] == request_id:
@@ -39,19 +45,20 @@ def log_error(message):
         f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
 
 # Чтение данных из файла validated_models.txt
-validated_models = read_file('validated_models.txt')
+validated_models = read_file('validated_models.txt', encoding='windows-1251')
 
 @app.route('/', methods=['GET'])
 def index():
-    pending_changes = read_file('pending_changes.txt')
+    pending_changes = read_file('pending_changes.txt', encoding='windows-1251')
     return render_template('index.html', pending_changes=pending_changes)
 
 @app.route('/validate', methods=['POST'])
 def validate():
+    validated_models = read_file('validated_models.txt', encoding='windows-1251')
     data = request.json
     hash_sum = data['response']['hash_sum']
     validation_status = 'Failed'
-    if validated_models and validated_models[-1]['hash_sum'] == hash_sum:
+    if validated_models and any(model['hash_sum'] == hash_sum for model in validated_models[-2:]):
         data['validation_status'] = 'Success'
         response = requests.post('http://history-of-requests:5003/add_to_history', json=data)
         if response.status_code == 200:
