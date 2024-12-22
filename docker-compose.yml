@@ -1,0 +1,18 @@
+version: '3'
+services:
+  request_processing:
+    build: ./request-processing
+    ports:
+      - "5000:5000"
+  scoring:
+    build: ./scoring
+    ports:
+      - "5001:5001"
+  security:
+    build: ./security
+    ports:
+      - "5002:5002"
+  history_of_requests:
+    build: ./history-of-requests
+    ports:
+      - "5003:5003"

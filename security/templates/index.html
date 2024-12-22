@@ -1,10 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+        <style>
+                 body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            width: 95%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        p {
+            text-align: center;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .approve-button, .reject-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .approve-button {
+            background-color: green;
+            color: white;
+        }
+        .reject-button {
+            background-color: red;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <div class="container">
+        <h1>Изменение модели</h1>
+        <form id="change-form" method="POST">
+            <label for="request_id">ID запроса:</label>
+            <input type="text" id="request_id" name="request_id" required>
+            <label for="fio">ФИО:</label>
+            <input type="text" id="fio" name="fio" required>
+            <div class="button-container">
+                <button type="button" class="approve-button" onclick="applyChange()">Подтвердить изменения</button>
+                <button type="button" class="reject-button" onclick="rejectChange()">Отклонить именения</button>
+            </div>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        <h2>Запросы на изменение модели</h2>
+        <table border="1">
+            <tr>
+                <th>ID запроса</th>
+                <th>ФИО</th>
+                <th>Хэш-сумма</th>
+                <th>Дата</th>
+                <th>Валидатор</th>
+                <th>Дата проверки</th>
+                <th>Подтверждено</th>
+            </tr>
+            {% for change in pending_changes %}
+            <tr>
+                <td>{{ change.request_id }}</td>
+                <td>{{ change.fio }}</td>
+                <td>{{ change.hash_sum }}</td>
+                <td>{{ change.date }}</td>
+                <td>{{ change.checked_by }}</td>
+                <td>{{ change.check_date }}</td>
+                <td>{{ change.approve }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script>
+        function applyChange() {
+            var request_id = document.getElementById('request_id').value;
+            var fio = document.getElementById('fio').value;
+            fetch('/apply_change', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'request_id': request_id,
+                    'fio': fio
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                location.reload();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function rejectChange() {
+            var request_id = document.getElementById('request_id').value;
+            var fio = document.getElementById('fio').value;
+            fetch('/reject_change', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'request_id': request_id,
+                    'fio': fio
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                location.reload();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
