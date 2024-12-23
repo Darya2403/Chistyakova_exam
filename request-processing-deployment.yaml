@@ -16,7 +16,7 @@ spec:
       containers:
       - name: request-processing
         image: request-processing:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
 ---
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
-  type: LoadBalancer
+  type: NodePort

@@ -16,7 +16,7 @@ spec:
       containers:
       - name: scoring
         image: scoring:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         ports:
         - containerPort: 5001
 ---
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 5001
       targetPort: 5001
-  type: LoadBalancer
+  type: NodePort

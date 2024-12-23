@@ -16,7 +16,7 @@ spec:
       containers:
       - name: history-of-requests
         image: history-of-requests:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         ports:
         - containerPort: 5003
 ---
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 5003
       targetPort: 5003
-  type: LoadBalancer
+  type: NodePort
