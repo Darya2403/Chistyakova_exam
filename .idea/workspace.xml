@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa3d2b9-9bda-40c0-a1a4-2b250c58cea8" name="Changes" comment="fix for kuber">
-      <change afterPath="$PROJECT_DIR$/dashboard-adminuser-binding.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard-adminuser.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_history_of_requests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_request_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_scoring.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_security.py" afterDir="false" />
+    <list default="true" id="8aa3d2b9-9bda-40c0-a1a4-2b250c58cea8" name="Changes" comment="autotests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request-processing/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/request-processing/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scoring/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/scoring/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring-deployment.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,13 +95,22 @@
       <option name="project" value="LOCAL" />
       <updated>1734914040769</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="autotests">
+      <option name="closed" value="true" />
+      <created>1736095100152</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736095100152</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="imagePullPolicy" />
     <MESSAGE value="fix versions" />
     <MESSAGE value="fix for kuber" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix for kuber" />
+    <MESSAGE value="autotests" />
+    <option name="LAST_COMMIT_MESSAGE" value="autotests" />
   </component>
 </project>
