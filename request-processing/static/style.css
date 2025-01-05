@@ -42,6 +42,7 @@
             font-weight: bold;
         }
         input[type="text"],
+        input[type="number"],
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -70,13 +71,13 @@
             <label for="fio">ФИО:</label>
             <input type="text" id="fio" name="fio" required>
             <label for="annual_income">Annual Income:</label>
-            <input type="text" id="annual_income" name="annual_income" required>
+            <input type="number" id="annual_income" name="annual_income" required>
             <label for="age">Age:</label>
-            <input type="text" id="age" name="age" required>
+            <input type="number" id="age" name="age" required>
             <label for="num_bank_accounts">Number of Bank Accounts:</label>
-            <input type="text" id="num_bank_accounts" name="num_bank_accounts" required>
+            <input type="number" id="num_bank_accounts" name="num_bank_accounts" required>
             <label for="outstanding_debt">Outstanding Debt:</label>
-            <input type="text" id="outstanding_debt" name="outstanding_debt" required>
+            <input type="number" id="outstanding_debt" name="outstanding_debt" required>
             <div class="button-container">
                 <button type="submit" class="submit-button">Submit</button>
             </div>
