@@ -12,16 +12,19 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.json
-    features = [
-        float(data['Annual_Income']),
-        float(data['Age']),
-        float(data['Num_Bank_Accounts']),
-        float(data['Outstanding_Debt'])
-    ]
-    prediction = model.predict([features])[0]
-    hash_sum = hashlib.sha256(str(model.coef_).encode()).hexdigest()
-    return jsonify({'credit_score': int(prediction), 'hash_sum': hash_sum})
+    try:
+        data = request.json
+        features = [
+            float(data['Annual_Income']),
+            float(data['Age']),
+            float(data['Num_Bank_Accounts']),
+            float(data['Outstanding_Debt'])
+        ]
+        prediction = model.predict([features])[0]
+        hash_sum = hashlib.sha256(str(model.coef_).encode()).hexdigest()
+        return jsonify({'credit_score': int(prediction), 'hash_sum': hash_sum})
+    except (KeyError, ValueError, TypeError) as e:
+        return jsonify({'error': str(e)}), 400
 
 @app.route('/change_model', methods=['GET', 'POST'])
 def change_model():

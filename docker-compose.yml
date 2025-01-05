@@ -4,15 +4,42 @@ services:
     build: ./request-processing
     ports:
       - "5000:5000"
+    networks:
+      - mynetwork
+
   scoring:
     build: ./scoring
     ports:
       - "5001:5001"
+    networks:
+      - mynetwork
+
   security:
     build: ./security
     ports:
       - "5002:5002"
+    networks:
+      - mynetwork
+
   history-of-requests:
     build: ./history-of-requests
     ports:
       - "5003:5003"
+    networks:
+      - mynetwork
+
+  tests:
+    build: ./tests
+    depends_on:
+      - request-processing
+      - scoring
+      - security
+      - history-of-requests
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

@@ -12,13 +12,13 @@
         <label for="fio">ФИО:</label>
         <input type="text" id="fio" name="fio" required><br><br>
         <label for="annual_income">Общий доход:</label>
-        <input type="text" id="annual_income" name="annual_income" required><br><br>
+        <input type="number" id="annual_income" name="annual_income" required><br><br>
         <label for="age">Возраст:</label>
-        <input type="text" id="age" name="age" required><br><br>
+        <input type="number" id="age" name="age" required><br><br>
         <label for="num_bank_accounts">Количество банковских счетов:</label>
-        <input type="text" id="num_bank_accounts" name="num_bank_accounts" required><br><br>
+        <input type="number" id="num_bank_accounts" name="num_bank_accounts" required><br><br>
         <label for="outstanding_debt">Сумма долгов:</label>
-        <input type="text" id="outstanding_debt" name="outstanding_debt" required><br><br>
+        <input type="number" id="outstanding_debt" name="outstanding_debt" required><br><br>
         <input type="submit" value="Submit">
     </form>
     {% if credit_score is not none %}
