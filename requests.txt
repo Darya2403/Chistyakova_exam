@@ -41,3 +41,6 @@ $headers = @{
 }
 
 Invoke-WebRequest -Uri "http://localhost:5000/validate" -Method Post -Body $body -Headers $headers
+
+curl -X POST http://localhost:5000/validate -H "Content-Type: application/json" -d '{"response": {"hash_sum": "2de60b28ea30e75bbbd193681ecafa7b15581b9bf0959d5b774200c3c270a308"}}'
+
