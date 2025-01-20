@@ -4,7 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa3d2b9-9bda-40c0-a1a4-2b250c58cea8" name="Changes" comment="fix" />
+    <list default="true" id="8aa3d2b9-9bda-40c0-a1a4-2b250c58cea8" name="Changes" comment="styles">
+      <change afterPath="$PROJECT_DIR$/requests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-adminuser-binding.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-adminuser.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/history-of-requests-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/history-of-requests/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/history-of-requests/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/history-of-requests/requests_log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/history-of-requests/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics-server-servicemonitor.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/monitoring-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-processing/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/logistic_regression_model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoring/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/error.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/pending_changes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pending_changes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/validated_models.txt" beforeDir="false" afterPath="$PROJECT_DIR$/validated_models.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_history_of_requests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_request_processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_scoring.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_security.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +84,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Дарья\Chistyakova_Security\pythonProject" />
       <recent name="C:\Users\Дарья\Chistyakova_Security\pythonProject\scoring" />
     </key>
   </component>
@@ -108,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736114645192</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="styles">
+      <option name="closed" value="true" />
+      <created>1736114942282</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736114942282</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,6 +169,7 @@
     <MESSAGE value="fix for kuber" />
     <MESSAGE value="autotests" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="styles" />
   </component>
 </project>

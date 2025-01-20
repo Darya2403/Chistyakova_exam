@@ -1,9 +1,3 @@
-#Пример curl для вызова смены модели
-#curl -X POST http://localhost:5002/change_model \
-     #-H "Content-Type: application/json" \
-     #-d '{"fio": "John Doe", "hash_sum": "abc123"}'
-
-
 from flask import Flask, request, jsonify, render_template
 import hashlib
 from datetime import datetime
@@ -60,21 +54,10 @@ def validate():
     validation_status = 'Failed'
     if validated_models and any(model['hash_sum'] == hash_sum for model in validated_models[-2:]):
         data['validation_status'] = 'Success'
-        response = requests.post('http://history-of-requests:5003/add_to_history', json=data)
-        if response.status_code == 200:
-            return jsonify({'message': 'All OK'}), 200
-        else:
-            log_error(f"{data}")
-            return jsonify({'message': 'Failed to log request'}), 500
+        return jsonify({'message': 'All OK'}), 200
     else:
         data['validation_status'] = 'Hash sum mismatch'
-        response = requests.post('http://history-of-requests:5003/add_to_history', json=data)
-        if response.status_code == 200:
-            log_error(f"{data}")
-            return jsonify({'message': 'Hash sum mismatch'}), 400
-        else:
-            log_error(f"{data}")
-            return jsonify({'message': 'Failed to log request'}), 500
+        return jsonify({'message': 'Hash sum mismatch'}), 400
 
 @app.route('/change_model', methods=['POST'])
 def change_model():
@@ -127,4 +110,4 @@ def reject_change():
     return jsonify({'message': 'Change not found.'}), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    app.run(host='0.0.0.0', port=5000)
