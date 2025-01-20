@@ -10,6 +10,8 @@ $headers = @{
 
 Invoke-WebRequest -Uri "http://localhost:5000/change_model" -Method Post -Body $body -Headers $headers
 
+curl -X POST http://localhost:5000/change_model -H "Content-Type: application/json" -d '{"fio": "John Doe", "hash_sum": "abc123"}'
+
 
 # Запрос на валидацию с ошибками
 $body = @{
@@ -24,6 +26,8 @@ $headers = @{
 
 Invoke-WebRequest -Uri "http://localhost:5000/validate" -Method Post -Body $body -Headers $headers
 
+curl -X POST http://localhost:5000/validate -H "Content-Type: application/json" -d '{"response": {"hash_sum": "abc123"}}'
+
 
 # Запрос на валидацию без ошибок
 $body = @{
@@ -37,8 +41,3 @@ $headers = @{
 }
 
 Invoke-WebRequest -Uri "http://localhost:5000/validate" -Method Post -Body $body -Headers $headers
-
-
-
-
-
