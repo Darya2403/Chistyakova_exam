@@ -21,18 +21,17 @@ def write_file(file_path, data):
 
 # Функция для обновления строки в файле
 def update_line_in_file(file_path, request_id, new_data, encoding='utf-8'):
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding=encoding) as f:
         lines = f.readlines()
-    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding=encoding) as temp_file:
+
+    with open(file_path, 'w', encoding=encoding) as f:
         for line in lines:
             change = ast.literal_eval(line.strip())
             if change['request_id'] == request_id:
-                temp_file.write(str(new_data) + '\n')
+                f.write(str(new_data) + '\n')
             else:
-                temp_file.write(line)
-        temp_file_path = temp_file.name
-    os.replace(temp_file_path, file_path)
-
+                f.write(line)
+                
 # Функция для записи ошибок в файл
 def log_error(message):
     with open('error.txt', 'a') as f:
